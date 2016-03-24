@@ -10,6 +10,7 @@ rvm:
   - 2.1.0
 script: bundle exec rake test
 env:
+  - PUPPET_VERSION="~> 3.7.4"
   - PUPPET_VERSION="~> 3.7.4" FUTURE_PARSER=yes STRICT_VARIABLES=yes
   - PUPPET_VERSION="~> 3.8.4"
   - PUPPET_VERSION="~> 3.8.4" FUTURE_PARSER=yes STRICT_VARIABLES=yes
