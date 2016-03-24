@@ -1,8 +1,10 @@
 source "https://rubygems.org"
 
+source "https://rubygems.org"
+
 group :test do
   gem "json"
-  gem "rake"
+  gem "rake", "~> 10.5.0" 
   gem "puppet", ENV['PUPPET_VERSION'] || '~> 3.7.0'
   gem "rspec"
   gem "rspec-core"
@@ -10,8 +12,6 @@ group :test do
   gem "puppetlabs_spec_helper"
   gem "metadata-json-lint"
   gem "puppet-syntax"
-  gem "hiera"
-  gem "hiera-puppet-helper"
 end
 
 group :development do
