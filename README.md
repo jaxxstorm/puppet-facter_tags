@@ -4,7 +4,7 @@
 
 ### What this module does
 
-This module creates a directory, `/etc/tags` and allows you to create JSON in this directory to create arbitrary tags in from a variety of sources. It then tags those tags and creates a structured fact with them
+This module creates a directory, `/etc/tags` and allows you to create JSON in this directory to create arbitrary tags from a variety of sources. It then evaluates those JSON files and creates a structured fact, `tags` with them.
 
 It also includes a defined type which allows you to create tags from with Puppet.
 
@@ -13,7 +13,7 @@ You might use this if:
   * You want an external build tool to tag virtual machines/container/hosts
   * You want to extend facter beyond what it does with key value pairs, and want a facter value with a output of `tags`
   * You are already used to the the concept of tagging in AWS, and want the same ability to use tags in physical infrastructure
-  * You have a deployment tool which you want to use to tag infrastructure, and you want those tags to be available in facter
+  * You have a deployment tool, or multiple deployment tools, which you want to use to tag infrastructure, and you want those tags to be available in facter
 
 ## Usage
 
