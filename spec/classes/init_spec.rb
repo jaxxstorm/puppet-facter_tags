@@ -9,7 +9,7 @@ describe 'facter_tags' do
   end
 
   context 'by default, should create tags directory' do
-    it { should contain_file('/etc/tags') \
+    it { should contain_file('tag directory') \
       .with(
         'ensure'  => 'directory',
         'path'    => '/etc/tags'

@@ -92,7 +92,7 @@ end # end module
 
 
 module Puppet::Parser::Functions
-  newfunction(:tag_sorted_json, :type => :rvalue, :doc => <<-EOS
+  newfunction(:tags_sorted_json, :type => :rvalue, :doc => <<-EOS
 This function takes unsorted hash and outputs JSON object making sure the keys are sorted.
 Optionally you can pass 2 additional parameters, pretty generate and indent length.
 
@@ -105,7 +105,7 @@ Optionally you can pass 2 additional parameters, pretty generate and indent leng
     pretty        = args[1]      || false
     indent_len    = args[2].to_i || 4
 
-    unsorted_hash.reject! {|key, value| value == :undef }
+    unsorted_hash.reject! {|key, value| value == :undef } unless unsorted_hash.is_a? String
 
     if pretty
       return JSON.sorted_pretty_generate(unsorted_hash, indent_len) << "\n"

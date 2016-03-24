@@ -3,18 +3,23 @@
 #
 # == Parameters
 #
-class facter_tags
+class facter_tags (
+  $user  = 'root',
+  $group = 'root',
+  $mode  = '0755',
+)
 {
 
   # The tags path is hard coded
   # This is because the facter value reads from it
   # if anyone has a way of passing params
   # I'm all ears!
-  file { '/etc/tags':
+  file { 'tag directory':
     ensure => directory,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0755',
+    path   => '/etc/tags',
+    owner  => $user,
+    group  => $group,
+    mode   => $mode,
   }
 
 }
