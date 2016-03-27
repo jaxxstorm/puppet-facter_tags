@@ -29,6 +29,22 @@ Once you've included the module, a directory, `/etc/tags` will be created which 
 
 You can use any tool you like to create JSON files inside this directory, and these will end up as structured facts.
 
+As an example, we create a JSON file in `/etc/tags` with a JSON array:
+
+```javascript
+# cat /etc/tags/type.json
+[
+  "infra"
+]
+```
+
+This gets is then read by facter:
+
+```
+# facter -p tags
+["infra"]
+```
+
 ### Tags from Puppet
 
 There's also a defined type included which allows you to tag hosts from within Puppet. Using this is as simple as this:
