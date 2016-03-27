@@ -1,5 +1,7 @@
 # External Tags for Puppet
 
+[![Build Status](https://travis-ci.org/jaxxstorm/puppet-facter_tags.svg?branch=master)](https://travis-ci.org/jaxxstorm/puppet-facter_tags)
+
 ## Installation
 
 ### What this module does
