@@ -5,6 +5,8 @@ define facter_tags::value (
   $ensure = present,
   $values,
 ){
+  # Ensure we populate the /etc/tags dir
+  require facter_tags
 
   # first make sure we're not empty
   if !empty($values) {
