@@ -16,6 +16,23 @@ describe 'facter_tags::value' do
     #it { expect { should compile }.to raise_error(/Values must not be empty/) }
   end
 
+  context 'by default should include init' do
+    let(:params) {{
+      :values => 'a tag'
+    }}
+    it { should contain_class('facter_tags') }
+  end
+
+  context 'tags directory should exist' do
+    let(:params) {{
+      :values => 'a tag'
+    }}
+    it { should contain_file('tag directory') \
+      .with_ensure('directory') \
+      .with_path('/etc/tags')
+    }
+  end
+
   context 'when passing a string' do
     let(:params) {{
       :values => 'a tag'
