@@ -12,7 +12,25 @@ describe 'facter_tags' do
     it { should contain_file('tag directory') \
       .with(
         'ensure'  => 'directory',
-        'path'    => '/etc/tags'
+        'path'    => '/etc/tags',
+        'owner'   => 'root',
+        'group'   => 'root',
+        'mode'    => '0755',
+        'purge'   => false,
+        'recurse' => false,
+      )
+    }
+  end
+
+  context 'purge config dirs' do
+    let(:params) {{
+      :purge_tag_dir => true,
+    }}
+    it { should contain_file('tag directory') \
+      .with(
+        'ensure'  => 'directory',
+        'purge'   => true,
+        'recurse' => true,
       )
     }
   end
