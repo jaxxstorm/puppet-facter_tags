@@ -35,7 +35,7 @@ tags.uniq!
 #tags = Dir['/etc/tags/*.json'].map { |f| JSON.parse File.read(f) }.flatten
 
 Facter.add(:tags) do
-  confine :linux
+  confine :kernel => 'Linux'
   setcode do
     tags unless tags.empty?
   end

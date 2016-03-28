@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-source "https://rubygems.org"
-
 group :test do
   gem "json"
   gem "rake", "~> 10.5.0" 
