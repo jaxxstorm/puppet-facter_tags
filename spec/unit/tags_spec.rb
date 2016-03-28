@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'facter/tags'
 
 RSpec.configure do |c|
   c.include PuppetlabsSpec::Files
@@ -20,8 +19,8 @@ end
 
 describe 'tags_fact', :type => :fact do
 
-  context 'by default it should be nil' do
-    it "should return the facter value" do
+  context 'default' do
+    it 'by default should be nil' do
       expect(Facter.fact(:tags).value).to be_nil
     end
   end
