@@ -28,6 +28,9 @@ tags.flatten!
 # Remove all nil values
 tags.compact!
 
+# Remove all duplicate values
+tags.uniq!
+
 # Old method left here for reference
 #tags = Dir['/etc/tags/*.json'].map { |f| JSON.parse File.read(f) }.flatten
 
