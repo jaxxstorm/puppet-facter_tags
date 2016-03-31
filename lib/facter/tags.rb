@@ -11,15 +11,20 @@ def valid_json?(json)
 end
 
 # Read all json files from directory
-tag_files = Dir['/etc/tags/*.json']
+def tag_files
+  return Dir['/etc/tags/*.json']
+end
 
-# loop through through all those files
-tags = tag_files.map do |f|
-  file = File.read(f)
-  # Quick check for valid JSON
-  if valid_json?(file)
-    JSON.parse(file)
+def tags
+  # loop through through all those files
+  values = tag_files.map do |f|
+    file = File.read(f)
+    # Quick check for valid JSON
+    if valid_json?(file)
+      JSON.parse(file)
+    end
   end
+  return values
 end
 
 # Flatten all the values
