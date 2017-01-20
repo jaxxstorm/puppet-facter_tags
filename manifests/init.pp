@@ -20,13 +20,13 @@ class facter_tags (
   # if anyone has a way of passing params
   # I'm all ears!
   file { 'tag directory':
-    ensure   => directory,
-    path     => '/etc/tags',
-    owner    => $user,
-    group    => $group,
-    mode     => $mode,
-    purge    => $purge_tag_dir,
-    recurse  => $purge_tag_dir,
+    ensure  => directory,
+    path    => '/etc/tags',
+    owner   => $user,
+    group   => $group,
+    mode    => $mode,
+    purge   => $purge_tag_dir,
+    recurse => $purge_tag_dir,
   }
 
 }
