@@ -5,7 +5,7 @@ describe 'facter_tags::value' do
 
   context 'when values are omitted' do
     # no params
-    it { expect { should compile }.to raise_error(/Must pass values/) }
+    it { expect { should compile }.to raise_error(/values/) }
   end
 
   context 'when values is an empty string' do

@@ -2,8 +2,8 @@
 #
 # This definition creates a facter_tags entry
 define facter_tags::value (
-  $ensure = present,
   $values,
+  $ensure = present,
 ){
   # Ensure we populate the /etc/tags dir
   require facter_tags
@@ -15,6 +15,6 @@ define facter_tags::value (
       content => tags_sorted_json($values, true, 4),
     }
   } else {
-    fail("Values must not be empty")
+    fail('Values must not be empty')
   }
 }

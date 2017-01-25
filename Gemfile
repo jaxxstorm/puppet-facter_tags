@@ -1,25 +1,33 @@
 source "https://rubygems.org"
 
+group :development do
+  gem "beaker", "> 2.0.0"
+  gem "beaker-rspec", ">= 5.1.0"
+  gem "beaker-puppet_install_helper"
+  gem "pry"
+  gem "vagrant-wrapper"
+  gem "puppet-strings"
+end
+
 group :test do
   gem "json"
-  gem "rake", "~> 10.5.0" 
-  gem "puppet", ENV['PUPPET_VERSION'] || '~> 3.7.0'
-  gem "rspec"
-  gem "rspec-core"
+  gem "json_pure", "~> 1.8.3"
+  # Pin for 1.8.7 compatibility for now
+  gem "rake", '< 11.0.0'
+  gem "puppet", ENV['PUPPET_VERSION'] || '~> 4.8.0'
+  gem "puppet-lint"
+
+  # Pin for 1.8.7 compatibility for now
+  gem "rspec", '< 3.2.0'
+  gem "rspec-core", "3.1.7"
   gem "rspec-puppet", "~> 2.1"
-  gem "puppetlabs_spec_helper"
-  gem "metadata-json-lint"
+
   gem "puppet-syntax"
-end
-
-group :development do
-  gem "travis"
-  gem "travis-lint"
-  gem "vagrant-wrapper"
+  gem "puppetlabs_spec_helper"
+  gem "hiera"
+  gem "hiera-puppet-helper"
   gem "puppet-blacksmith"
-  gem "guard-rake"
-end
-
-group :system_tests do
-  gem "beaker"
+  gem "serverspec"
+  gem "net-ssh", "~> 2.9.0"
+  gem "metadata-json-lint", "~> 1.0.0"
 end
