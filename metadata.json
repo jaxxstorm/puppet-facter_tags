@@ -1,6 +1,6 @@
 {
   "name": "jaxxstorm-facter_tags",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "jaxxstorm",
   "summary": "Turn a directory of JSON files into a facter fact",
   "license": "MIT",
@@ -9,23 +9,41 @@
   "issues_url": "https://github.com/jaxxstorm/puppet-facter_tags/issues",
   "operatingsystem_support": [
     {
-    "operatingsystem":"RedHat",
-    "operatingsystemrelease":[ "5.0", "6.0", "7.0" ]
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5.0",
+        "6.0",
+        "7.0"
+      ]
     },
     {
-    "operatingsystem":"CentOS",
-    "operatingsystemrelease":[ "5.0", "6.0", "7.0" ]
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5.0",
+        "6.0",
+        "7.0"
+      ]
     },
     {
-    "operatingsystem":"Debian",
-    "operatingsystemrelease":[ "6.0", "7.0" ]
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6.0",
+        "7.0"
+      ]
     },
     {
-    "operatingsystem":"Ubuntu",
-    "operatingsystemrelease":[ "10.04", "12.04", "14.04" ]
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04"
+      ]
     }
-   ],
+  ],
   "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">=1.0.0" }
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=1.0.0"
+    }
   ]
 }
